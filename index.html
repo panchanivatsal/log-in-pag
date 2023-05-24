@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Log In</h1>
+        <div class="box">
+            <input type="text" placeholder="Enter the Name" id="name">
+        </div>
+        <div class="box">
+            <input type="email" placeholder="Enter the E-mail" id="email">
+        </div>
+        <div class="box">
+            <input type="password" placeholder="Enter Password" id="password">
+        </div>
+        <div class="box">
+            <input type="password" placeholder=" Confirm Password" id="pswd2">
+
+
+        </div>
+
+
+
+
+        <button class="btn justify-content-center" onclick="save()">submit</button>
+    </div>
+</body>
+<script type="text/javascript">
+
+    const save = () => {
+        var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var password = document.getElementById('pswd2').value;
+        if (!name && !email && !password) {
+            alert("Fille the all data");
+            return false;
+        }
+        else if (!email) {
+            alert("fill name field");
+            return false;
+        }
+        else if (!password) {
+            alert("fill password field");
+            return false;
+
+        }
+        else if (password.length < 6 && password.length < 12) {
+            alert("not vaild passoword");
+            return false;
+        }
+        else if (!password == pswd2) {
+            alert("Enter the confrom password")
+        }
+        // mail
+       else if (email.match(mailFormat)) {
+            alert("Invalid address!");
+            return false;
+
+        }
+        else {
+            alert("Your restion is a sucssfull");
+        }
+
+    }
+</script>
+
+</html>
